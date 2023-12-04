@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-
-def read_lines(fname: str) -> list[str]:
-    with open(fname) as f:
-        return f.read().strip().splitlines()
+import helper
     
 def get_first_and_last_digits(input_string) -> None:
     digits = [int(char) for char in input_string if char.isdigit()]
@@ -18,7 +15,7 @@ def numcat(first, last) -> int:
 
 def main() -> None:
     #lines = read_lines("example.txt")
-    lines = read_lines("input.txt")
+    lines = helper.read_lines("input.txt")
     result = 0
     for item in lines:
         first,last = get_first_and_last_digits(item)
