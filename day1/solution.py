@@ -1,4 +1,4 @@
-import math
+#!/usr/bin/env python3
 
 def read_lines(fname: str) -> list[str]:
     with open(fname) as f:
@@ -12,11 +12,11 @@ def get_first_and_last_digits(input_string) -> None:
     else:
         return None, None
 
-def numcat(a,b) -> int:
-    return int(math.pow(10,(int(math.log(b,10)) + 1)) * a + b)
+def numcat(first, last) -> int:
+    return first * 10 + last
 
 
-def start() -> None:
+def main() -> None:
     #lines = read_lines("example.txt")
     lines = read_lines("input.txt")
     result = 0
@@ -26,5 +26,7 @@ def start() -> None:
         result += numcat(first, last)
     print(result)
 
+##############################################################################
+
 if __name__ == "__main__":
-    start()
+    main()
